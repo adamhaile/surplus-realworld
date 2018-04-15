@@ -1,0 +1,42 @@
+{
+  "name": "surplus-realworld",
+  "version": "1.0.0",
+  "description": "A Surplus Implementation of the Realworld Example App",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development",
+    "build": "webpack --mode=production",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamhaile/realworld-example-app.git"
+  },
+  "keywords": [
+    "Surplus",
+    "Realworld",
+    "example",
+    "s-js"
+  ],
+  "author": "Adam Haile",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamhaile/realworld-example-app/issues"
+  },
+  "homepage": "https://github.com/adamhaile/realworld-example-app#readme",
+  "devDependencies": {
+    "@types/marked": "^0.3.0",
+    "compression-webpack-plugin": "^1.1.11",
+    "marked": "^0.3.19",
+    "s-array": "^0.4.9",
+    "s-js": "^0.4.8",
+    "surplus": "^0.5.2",
+    "surplus-loader": "^0.5.0",
+    "surplus-mixin-data": "^0.5.0",
+    "ts-loader": "^4.1.0",
+    "typescript": "^2.8.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  }
+}
