@@ -1,12 +1,14 @@
 'use strict';
 
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var path = require('path'),
+	UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	entry: './src/main.tsx',
 	devtool: 'source-map',
 	output: {
-		filename: './dist/main.js'
+		path: path.resolve(__dirname, 'dist'),
+		publicPath: '/dist/'
 	},
 	resolve: {
         extensions: ['.ts', '.tsx', '.js']
