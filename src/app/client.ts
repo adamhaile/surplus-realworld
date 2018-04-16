@@ -229,5 +229,7 @@ isAuthFailure = (e : any) => e instanceof Response && e.status === 401,
 query = (q : { [ prop : string ] : any }) =>
     Object.keys(q)
         .filter(p => q[p] !== undefined)
-        .map((p, i) => `${i ? '&' : '?'}${encodeURIComponent(p)}=${encodeURIComponent(q[p]!)}`)
+        // weird, the Conduit server doesn't expect these params to be escaped and fails on them if so :/
+        //.map((p, i) => `${i ? '&' : '?'}${encodeURIComponent(p)}=${encodeURIComponent(q[p]!)}`)
+        .map((p, i) => `${i ? '&' : '?'}${p}=${q[p]}`)
         .join('');
