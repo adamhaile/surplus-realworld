@@ -27,6 +27,9 @@ export const App = () => {
         client          = AuthClient(baseClient, auth),
         location        = HashSignal();
 
+    // cancel any credential request when location changes
+    S.on(location.change, auth.cancelCredentials);
+
     return { user, isAuthenticated, login, logout, ...auth, location, client, init: init() };
 
     // request initial data, here just the user

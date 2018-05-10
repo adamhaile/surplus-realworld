@@ -27,7 +27,7 @@ export const AuthMonitor = <T>(
     // means request creds and pass them to the function.
     const requestCredentials = S.data(null as null | typeof login);
 
-    return { requestCredentials, requireAuth };
+    return { requestCredentials, requireAuth, cancelCredentials };
 
     // authenticate() returns a promise which won't complete until the user has 
     // successfully logged in, even if that takes several tries by the user
@@ -73,5 +73,10 @@ export const AuthMonitor = <T>(
                 return await fn(...arguments);
             }
         });
+    }
+
+    function cancelCredentials() {
+        loginTask = null;
+        requestCredentials(null);
     }
 }
